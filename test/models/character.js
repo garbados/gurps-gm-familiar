@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Character = require('../../lib/characters/model');
+var Character = require('../../lib/models/character');
 
 describe('characters', function () {
   it('should create a character with derived characteristics', function () {
