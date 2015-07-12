@@ -1,0 +1,29 @@
+{
+  "name": "gurps-gm-familiar",
+  "version": "0.0.0",
+  "description": "A GM assistant for GURPS games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jshint lib test bin && mocha -R spec --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garbados/gurps-gm-familiar"
+  },
+  "keywords": [
+    "gurps",
+    "games",
+    "web"
+  ],
+  "author": "Diana Thayer <garbados@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garbados/gurps-gm-familiar/issues"
+  },
+  "homepage": "https://github.com/garbados/gurps-gm-familiar",
+  "devDependencies": {
+    "jscoverage": "^0.5.9",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5"
+  }
+}
