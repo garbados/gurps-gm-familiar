@@ -1,5 +1,7 @@
 # Familiar
 
+[![Build Status](https://travis-ci.org/garbados/gurps-gm-familiar.svg?branch=master)](https://travis-ci.org/garbados/gurps-gm-familiar)
+
 **THIS PROJECT IS UNDER CONSTRUCTION. IT WILL NOT YET WORK AS DESCRIBED.**
 
 An assistant for Game Masters of GURPS games, built with [PouchDB](http://pouchdb.com/).
