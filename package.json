@@ -4,7 +4,8 @@
   "description": "A GM assistant for GURPS games.",
   "main": "index.js",
   "scripts": {
-    "test": "jshint lib test bin && mocha -R spec --recursive"
+    "test": "jshint lib test index.js && mocha -R spec --recursive",
+    "todo": "grep todo -i -n -r bin lib test"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,9 @@
     "jscoverage": "^0.5.9",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "pouchdb": "^3.6.0",
+    "pouchdb-find": "^0.3.5"
   }
 }
