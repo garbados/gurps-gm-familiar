@@ -5,9 +5,12 @@ describe('characters controller', function () {
   before(function () {
     // create models for use
     this.characters = new Characters();
-    this.test_character = new this.characters.model();
-    this.test_character.name("D'argo");
-    this.test_character.strength(12);
+    this.test_character = new Characters.model();
+    this.test_character.name = "D'argo";
+    this.test_character.strength = 12;
+  });
+  after(function () {
+    return this.characters.db.destroy();
   });
   it('should persist models to disk', function () {
     var self = this;
@@ -18,15 +21,15 @@ describe('characters controller', function () {
       return self.characters.load(self.test_character.name);
     })
     .then(function (character) {
-      assert.equal(character.strength(), self.test_character.strength());
+      assert.equal(character.strength, self.test_character.strength);
     });
   });
-  it('should handle queries', function () {
+  it.skip('should handle queries', function () {
     var self = this;
 
     return this.characters.find({
       selector: {name: "D'argo"},
-      fields: ['strength']
+      fields: ['name']
     })
     .then(function (character) {
       console.log(arguments);
