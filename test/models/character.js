@@ -18,4 +18,9 @@ describe('characters', function () {
     var test_character2 = new Character(json);
     assert.equal(test_character.strength(), test_character2.strength());
   });
+  it.only('should use getters and setters behind the scenes', function () {
+    var test_character = new Character();
+    test_character.strength = 12;
+    console.log(test_character.jsonify());
+  });
 });
