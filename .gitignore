@@ -1,3 +1,5 @@
 node_modules
 gurps-familiar-*
 *.swp
+bower_components
+build

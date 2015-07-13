@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jshint lib test index.js && mocha -R spec --recursive",
-    "todo": "grep todo -i -n -r bin lib test"
+    "todo": "grep todo -i -n -r bin lib test",
+    "build": "mkdir build; browserify lib/views/web/js/app.js -o build/app.js && node-sass lib/views/web/css/style.scss --include-path bower_components -o build && cp lib/views/web/html/* build"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,13 @@
   },
   "homepage": "https://github.com/garbados/gurps-gm-familiar",
   "devDependencies": {
+    "bower": "^1.4.1",
+    "browserify": "^10.2.6",
     "jscoverage": "^0.5.9",
     "jshint": "^2.8.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "node-sass": "^3.2.0",
+    "serve": "^1.4.0"
   },
   "dependencies": {
     "pouchdb": "^3.6.0",
