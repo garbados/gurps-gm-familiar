@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-info" ng-click="info = !info">?</button>
+		<span>{{ limitation.name }}</span>
+		<ul class="list-inline pull-right well well-sm">
+			<li ng-show="limitation.cost">
+				<span class="label label-danger">Cost: {{ limitation.cost }}</span>
+			</li>
+			<li ng-show="limitation.modifier">
+				<span class="label label-warning">Modifier: {{ limitation.modifier }}</span>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="row" ng-show="info">
+	<div class="col-xs-12">
+		<p class="well well-sm">{{ limitation.description }}</p>
+	</div>
+</div>

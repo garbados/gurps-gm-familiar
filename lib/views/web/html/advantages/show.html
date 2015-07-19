@@ -4,11 +4,14 @@
 		<span>{{ advantage.name }}</span>
 		<ul class="list-inline pull-right well well-sm">
 			<li ng-repeat="type in advantage.types">{{ type }}</li>
+			<li>
+				<span class="label label-danger">Cost: {{ advantage.cost }}</span>
+			</li>
 		</ul>
 	</div>
 </div>
 <div class="row" ng-show="info">
 	<div class="col-xs-12">
-		<p>{{ advantage.description }}</p>
+		<p class="well well-sm">{{ advantage.description }}</p>
 	</div>
 </div>

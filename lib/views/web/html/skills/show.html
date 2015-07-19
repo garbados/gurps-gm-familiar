@@ -3,7 +3,9 @@
 		<button class="btn btn-info" ng-click="info = !info">?</button>
 		<span>{{ skill.name }}</span>
 		<ul class="list-inline pull-right well well-sm">
-			<li ng-repeat="type in skill.types">{{ type }}</li>
+			<li>{{ skill.attribute }}</li>
+			<li>/</li>
+			<li>{{ skill.difficulty }}</li>
 		</ul>
 	</div>
 </div>

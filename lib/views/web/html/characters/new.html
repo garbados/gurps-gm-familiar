@@ -30,14 +30,34 @@
 	<header>
 		<h3>Attributes</h3>
 	</header>
-	<div class="row" ng-repeat="attribute in attributes track by attribute.name" style="min-height:20px;margin-bottom:20px;">
+	<div class="row" ng-repeat="attribute in attributes track by attribute.name">
 		<div class="col-xs-9" ng-include="'attributes/show.html'"></div>
 		<div class="col-xs-3">
 			<button class="btn btn-danger">-</button>
 			<button class="btn btn-success">+</button>
 			<button class="btn btn-info disabled">
-				{{ character[attribute.name] || 10 }}
+				{{ character[attribute.name] }}
 			</button>
+		</div>
+		<div ng-repeat="(name, enhancement) in attribute.enhancements" ng-init="enhancement.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'enhancements/show.html'"></div>
+			<div class="col-xs-3">
+				<button class="btn btn-danger">-</button>
+				<button class="btn btn-success">+</button>
+				<button class="btn btn-info disabled">
+					TODO
+				</button>
+			</div>
+		</div>
+		<div ng-repeat="(name, limitation) in attribute.limitations" ng-init="limitation.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'limitations/show.html'"></div>
+			<div class="col-xs-3">
+				<button class="btn btn-danger">-</button>
+				<button class="btn btn-success">+</button>
+				<button class="btn btn-info disabled">
+					TODO
+				</button>
+			</div>
 		</div>
 	</div>
 	<!-- advantages -->
@@ -53,19 +73,57 @@
 				{{ character.advantages[advantage.name] || 0 }}
 			</button>
 		</div>
+		<div ng-repeat="(name, enhancement) in advantage.enhancements" ng-init="enhancement.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'enhancements/show.html'"></div>
+			<div class="col-xs-3">
+				<button class="btn btn-danger">-</button>
+				<button class="btn btn-success">+</button>
+				<button class="btn btn-info disabled">
+					TODO
+				</button>
+			</div>
+		</div>
+		<div ng-repeat="(name, limitation) in advantage.limitations" ng-init="limitation.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'limitations/show.html'"></div>
+			<div class="col-xs-3">
+				<button class="btn btn-danger">-</button>
+				<button class="btn btn-success">+</button>
+				<button class="btn btn-info disabled">
+					TODO
+				</button>
+			</div>
+		</div>
 	</div>
 	<!-- disadvantages -->
 	<header>
 		<h3>Disadvantages</h3>
 	</header>
 	<div class="row" ng-repeat="disadvantage in disadvantages track by disadvantage.name">
-		<div class="col-xs-12">
-			<div class="col-xs-9" ng-include="'disadvantages/show.html'"></div>
+		<div class="col-xs-9" ng-include="'disadvantages/show.html'"></div>
+		<div class="col-xs-3">
+			<button class="btn btn-danger">-</button>
+			<button class="btn btn-success">+</button>
+			<button class="btn btn-info disabled">
+				{{ character.disadvantages[disadvantage.name] || 0 }}
+			</button>
+		</div>
+		<div ng-repeat="(name, enhancement) in disadvantage.enhancements" ng-init="enhancement.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'enhancements/show.html'"></div>
 			<div class="col-xs-3">
 				<button class="btn btn-danger">-</button>
 				<button class="btn btn-success">+</button>
 				<button class="btn btn-info disabled">
-					{{ character.disadvantages[disadvantage.name] || 0 }}
+					TODO
+				</button>
+			</div>
+		</div>
+		<div ng-repeat="(name, limitation) in disadvantage.limitations" ng-init="limitation.name = name">
+			<div class="col-xs-offset-1 col-xs-8" ng-include="'limitations/show.html'"></div>
+			<div class="col-xs-3">
+				<button class="btn btn-danger">-</button>
+				<button class="btn btn-success">+</button>
+				<button class="btn btn-info disabled">
+					TODO
 				</button>
 			</div>
 		</div>
@@ -75,32 +133,30 @@
 		<h3>Skills</h3>
 	</header>
 	<div class="row" ng-repeat="skill in skills track by skill.name">
-		<div class="col-xs-12">
-			<div class="col-xs-9" ng-include="'skills/show.html'"></div>
-			<div class="col-xs-3">
-				<button class="btn btn-danger">-</button>
-				<button class="btn btn-success">+</button>
-				<button class="btn btn-info disabled">
-					{{ character.skills[skill.name] || 0 }}
-				</button>
-			</div>
+		<div class="col-xs-9" ng-include="'skills/show.html'"></div>
+		<div class="col-xs-3">
+			<button class="btn btn-danger">-</button>
+			<button class="btn btn-success">+</button>
+			<button class="btn btn-info disabled">
+				{{ character.skills[skill.name] || 0 }}
+			</button>
 		</div>
 	</div>
 	<!-- techniques -->
 	<header>
 		<h3>Techniques</h3>
 	</header>
-	<div class="row" ng-repeat="technique in techniques track by technique.name">
-		<div class="col-xs-12">
-			<div class="col-xs-9" ng-include="'techniques/show.html'"></div>
-			<div class="col-xs-3">
-				<button class="btn btn-danger">-</button>
-				<button class="btn btn-success">+</button>
-				<button class="btn btn-info disabled">
-					{{ character.techniques[technique.name] || 0 }}
-				</button>
-			</div>
-		</div>
-	</div>
+	<div class="row" ng-repeat="technique in techniques track by technique.name"></div>
+	<!-- spells -->
+	<header>
+		<h3>Spells</h3>
+	</header>
+	<div class="row" ng-repeat="spell in spells track by spell.name"></div>
+	<!-- psionics -->
+	<header>
+		<h3>Psionics</h3>
+	</header>
+	<div class="row" ng-repeat="psionic in psionics track by psionic.name"></div>
 	<!-- TODO submit -->
+	<button class="btn btn-success">Create!</button>
 </form>

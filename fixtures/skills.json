@@ -1,0 +1,37 @@
+[
+	{
+		"name": "Acrobatics",
+		"description": "This is the ability to perform gymnastic stunts, roll, take falls, etc. This can be handy on an adventure, as tightrope walking, human pyramids, and trapeze swinging all have useful applications. Each trick requires a separate skill roll, at whatever penalties the GM sees fit. If you are performing stunts on a moving vehicle or mount, roll against the lower of Acrobatics and the appropriate Driving or Riding skill.",
+		"attribute": "dexterity",
+		"difficulty": "hard",
+		"defaults": {
+			"dexterity": -6
+		}
+	}, {
+		"name": "Aerobatics",
+		"description": "The ability to execute tight turns, loops, power dives, etc. in flight. You must be able to fly to learn this skill – although how you fly (magic, wings, jet pack, etc.) is irrelevant. Natural fliers might find flight to be as effortless as humans find walking, but they must still learn Aerobatics in order to engage in complex acrobatics. Add +2 to skill if you have 3D Spatial Sense (p. 34).",
+		"attribute": "dexterity",
+		"difficulty": "hard",
+		"defaults": {
+			"dexterity": -6
+		}
+	}, {
+		"name": "Aquabatics",
+		"description": "The ability to engage in underwater acrobatics.",
+		"attribute": "dexterity",
+		"difficulty": "hard",
+		"defaults": {
+			"dexterity": -6
+		}
+	}, {
+		"name": "Acting",
+		"description": "This is the ability to counterfeit moods, emotions, and voices, and to lie convincingly over a period of time. A successful Acting roll lets you pretend to feel something that you do not. The GM may also require an Acting roll whenever you try to fool someone, play dead in combat, etc. Impersonation is a special type of acting. To impersonate someone, you must first successfully disguise yourself (see Disguise, p. 187) – unless your vic- tims cannot see you! Note that Acting is not the same Fast-Talk (the art of the “quick con”) or Performance (the skill of screen and stage acting).",
+		"attribute": "intelligence",
+		"difficulty": "hard",
+		"defaults": {
+			"intelligence": -5,
+			"Performance": -2,
+			"Public Speaking": -5
+		}
+	}
+]
