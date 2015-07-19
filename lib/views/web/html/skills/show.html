@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-info" ng-click="info = !info">?</button>
+		<span>{{ skill.name }}</span>
+		<ul class="list-inline pull-right well well-sm">
+			<li ng-repeat="type in skill.types">{{ type }}</li>
+		</ul>
+	</div>
+</div>
+<div class="row" ng-show="info">
+	<div class="col-xs-12">
+		<p>{{ skill.description }}</p>
+	</div>
+</div>

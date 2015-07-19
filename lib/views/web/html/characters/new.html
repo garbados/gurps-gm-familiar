@@ -53,21 +53,66 @@
 		<header>
 			<h3>Advantages</h3>
 		</header>
-		<div ng-repeat="advantage in advantages"></div>
+		<div class="row" ng-repeat="advantage in advantages track by advantage.name">
+			<div class="col-xs-12">
+				<div class="col-xs-9" ng-include="'advantages/show.html'"></div>
+				<div class="col-xs-3">
+					<button class="btn btn-danger">-</button>
+					<button class="btn btn-success">+</button>
+					<button class="btn btn-info disabled">
+						{{ character.advantages[advantage.name] || 0 }}
+					</button>
+				</div>
+			</div>
+		</div>
 		<!-- disadvantages -->
 		<header>
 			<h3>Disadvantages</h3>
 		</header>
-		<div ng-repeat="disadvantage in disadvantages"></div>
+		<div class="row" ng-repeat="disadvantage in disadvantages track by disadvantage.name">
+			<div class="col-xs-12">
+				<div class="col-xs-9" ng-include="'disadvantages/show.html'"></div>
+				<div class="col-xs-3">
+					<button class="btn btn-danger">-</button>
+					<button class="btn btn-success">+</button>
+					<button class="btn btn-info disabled">
+						{{ character.disadvantages[disadvantage.name] || 0 }}
+					</button>
+				</div>
+			</div>
+		</div>
 		<!-- skills -->
 		<header>
 			<h3>Skills</h3>
 		</header>
-		<div ng-repeat="skill in skills"></div>
+		<div class="row" ng-repeat="skill in skills track by skill.name">
+			<div class="col-xs-12">
+				<div class="col-xs-9" ng-include="'skills/show.html'"></div>
+				<div class="col-xs-3">
+					<button class="btn btn-danger">-</button>
+					<button class="btn btn-success">+</button>
+					<button class="btn btn-info disabled">
+						{{ character.skills[skill.name] || 0 }}
+					</button>
+				</div>
+			</div>
+		</div>
 		<!-- techniques -->
 		<header>
 			<h3>Techniques</h3>
 		</header>
-		<div ng-repeat="techniques in techniques"></div>
+		<div class="row" ng-repeat="technique in techniques track by technique.name">
+			<div class="col-xs-12">
+				<div class="col-xs-9" ng-include="'techniques/show.html'"></div>
+				<div class="col-xs-3">
+					<button class="btn btn-danger">-</button>
+					<button class="btn btn-success">+</button>
+					<button class="btn btn-info disabled">
+						{{ character.techniques[technique.name] || 0 }}
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- TODO submit -->
 	</form>
 </div>
