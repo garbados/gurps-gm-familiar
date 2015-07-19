@@ -1,9 +1,73 @@
 <div class="row">
 	<h1>New Character</h1>
-	<!-- miscellaneous -->
-	<!-- attributes -->
-	<!-- advantages -->
-	<!-- disadvantages -->
-	<!-- skills -->
-	<!-- techniques -->
+	<form>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Name</label>
+				<div class="col-xs-10">
+					<input type="text" class="form-control" ng-model="character.name"></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Campaign</label>
+				<div class="col-xs-10">
+					<input type="text" class="form-control" ng-model="character.campaign"></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Template</label>
+				<div class="col-xs-10">
+					<input type="text" class="form-control" ng-model="character.template"></input>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-xs-2 control-label">Summary</label>
+				<div class="col-xs-10">
+					<input type="text" class="form-control" ng-model="character.summary"></input>
+				</div>
+			</div>
+		</div>
+		<!-- attributes -->
+		<header>
+			<h3>Attributes</h3>
+		</header>
+		<div class="form-inline">
+			<div class="form-group">
+				<label>Strength</label>
+				<input type="number" ng-model="character.strength"></input>
+			</div>
+			<div class="form-group">
+				<label>Dexterity</label>
+				<input type="number" ng-model="character.dexterity"></input>
+			</div>
+			<div class="form-group">
+				<label>Intelligence</label>
+				<input type="number" ng-model="character.intelligence"></input>
+			</div>
+			<div class="form-group">
+				<label>Health</label>
+				<input type="number" ng-model="character.health"></input>
+			</div>
+		</div>
+		<!-- advantages -->
+		<header>
+			<h3>Advantages</h3>
+		</header>
+		<div ng-repeat="advantage in advantages"></div>
+		<!-- disadvantages -->
+		<header>
+			<h3>Disadvantages</h3>
+		</header>
+		<div ng-repeat="disadvantage in disadvantages"></div>
+		<!-- skills -->
+		<header>
+			<h3>Skills</h3>
+		</header>
+		<div ng-repeat="skill in skills"></div>
+		<!-- techniques -->
+		<header>
+			<h3>Techniques</h3>
+		</header>
+		<div ng-repeat="techniques in techniques"></div>
+	</form>
 </div>
