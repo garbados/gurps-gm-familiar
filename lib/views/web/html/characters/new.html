@@ -30,7 +30,7 @@
 	<header>
 		<h3>Attributes</h3>
 	</header>
-	<div class="row" ng-repeat="attribute in attributes track by attribute.name">
+	<div class="row" ng-repeat="attribute in attributes track by attribute.name" style="min-height:20px;margin-bottom:20px;">
 		<div class="col-xs-9" ng-include="'attributes/show.html'"></div>
 		<div class="col-xs-3">
 			<button class="btn btn-danger">-</button>
