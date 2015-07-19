@@ -18,7 +18,7 @@ describe('characters controller', function () {
     return this.characters.save(this.test_character)
     .then(function (res) {
       assert.equal(res.ok, true);
-      return self.characters.load(self.test_character.name);
+      return self.characters.get(self.test_character.name);
     })
     .then(function (character) {
       assert.equal(character.strength, self.test_character.strength);
