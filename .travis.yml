@@ -1,8 +1,12 @@
 language: node_js
+cache:
+  directories:
+    - node_modules
+    - bower_components
 node_js:
 - iojs
 after_success:
-- npm run deploy
+- npm run build && npm run deploy
 env:
   global:
   - GH_REF: github.com/garbados/gurps-gm-familiar.git

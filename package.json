@@ -8,7 +8,8 @@
     "test": "jshint lib test index.js && mocha -R spec --recursive",
     "todo": "grep todo -i -n -r bin lib test",
     "build": "mkdir build; browserify lib/views/web/js/app.js -o build/app.js && node-sass lib/views/web/css/style.scss --include-path bower_components -o build && cp -r lib/views/web/html/* build && cp -r fixtures build",
-    "watch": "watch 'npm run build' lib -d --wait=2"
+    "watch": "watch 'npm run build' lib -d --wait=2",
+    "deploy": "./bin/deploy"
   },
   "repository": {
     "type": "git",
