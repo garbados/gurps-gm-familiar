@@ -1,4 +1,9 @@
 language: node_js
 node_js:
-- '0.11'
-- '0.10'
+- iojs
+after_success:
+- npm run deploy
+env:
+  global:
+  - GH_REF: github.com/garbados/gurps-gm-familiar.git
+  - secure: "Rwkzz4jIsTRYqCBUpzCMqJ238VJ3OBgfV74HWgDdngkGZgL7LHnbn08c37gQ5yEzFzcQdCnyaQxkve+7PT+zU7EH4b2FTIpegWPjaRXzvYdZTaFYp3NSKfBS05fdA8NiFUJV3FYw58Gi/3IDiUJf5UykUZNAzELUqRj4P85lQ7nRthp0zsqCuSkE+JmTsRYAMsX4OLYUgdWMmHDLNz/MO3kmkLRQsoUlDoNMXXivt0Lw2ZMUJ7gBZaSXnpTTDgvLiAeibchvfckd9ebgf0gHno3eRegipgkAbBHJRL7DKVsg3MZ0LYRfHA/meUJdxc8+LHdkqnjPChMwSW7LnTnR8bEUwsl4qakCS/o2RCmxFGcW9ZJn4Tz/ybIFHVaYUeqvokT3kZT0cxyqSVWtiZhGeOIWyPefmiPK835QNMeTI9PSVeBG1r7tYol+tJ7lvXIoh09I5MqQjSyPR55YrORJP+8xD4024TEOVRSSnQaYQHfvDxAFwveOLIKvHVyv3o60T53wLTymDMpyGem1pT0D6J0dyIlcQ+isK2laD4wtNguSM9r7wa0rzqe/BCw9xiLfjth/eBaKk8QDaXPh+wLiv36Cqq7t9YiNaa9BsMvIyIOrOnrGogpVh+W3zP4tmOsXViKLvmdabOmgXLF70uSeMbJZfQrnv/SAL0e20MYQ718="
