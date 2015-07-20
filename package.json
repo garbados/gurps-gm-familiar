@@ -7,7 +7,8 @@
     "postinstall": "bower install",
     "test": "jshint lib test index.js && mocha -R spec --recursive",
     "todo": "grep todo -i -n -r bin lib test",
-    "build": "mkdir build; browserify lib/views/web/js/app.js -o build/app.js && node-sass lib/views/web/css/style.scss --include-path bower_components -o build && cp -r lib/views/web/html/* build && cp -r fixtures build"
+    "build": "mkdir build; browserify lib/views/web/js/app.js -o build/app.js && node-sass lib/views/web/css/style.scss --include-path bower_components -o build && cp -r lib/views/web/html/* build && cp -r fixtures build",
+    "watch": "watch 'npm run build' lib -d --wait=2"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,8 @@
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
     "node-sass": "^3.2.0",
-    "serve": "^1.4.0"
+    "serve": "^1.4.0",
+    "watch": "^0.16.0"
   },
   "dependencies": {
     "pouchdb": "^3.6.0",
