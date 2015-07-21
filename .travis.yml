@@ -6,7 +6,7 @@ cache:
 node_js:
 - iojs
 after_success:
-- npm run build && npm run deploy
+- npm run deploy
 env:
   global:
   - GH_REF: github.com/garbados/gurps-gm-familiar.git

@@ -1,7 +1,7 @@
 describe('web view', function () {
   beforeEach(module('app'));
 
-  it('should say hello', function () {
-    console.log('hello!');
-  });
+  it('should import familiar', inject(function (familiar) {
+    assert.ok(familiar);
+  }));
 });
