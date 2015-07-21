@@ -3,3 +3,5 @@ gurps-familiar-*
 *.swp
 bower_components
 build
+lib-cov
+coverage.html

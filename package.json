@@ -9,7 +9,9 @@
     "todo": "grep todo -i -n -r bin lib test",
     "build": "mkdir build; browserify lib/views/web/js/app.js -o build/app.js && node-sass lib/views/web/css/style.scss --include-path bower_components -o build && cp -r lib/views/web/html/* build && cp -r fixtures build",
     "watch": "watch 'npm run build' lib -d --wait=2",
-    "deploy": "./bin/deploy"
+    "deploy": "./bin/deploy",
+    "cov-html": "mkdir build; jscoverage lib --exclude lib/views && NODE_DEBUG=true mocha -R html-cov test/models test/controllers test/index.js > build/coverage.html",
+    "coveralls": "jscoverage lib --exclude lib/views && NODE_DEBUG=true mocha -R mocha-lcov-reporter test/models test/controllers test/index.js | coveralls"
   },
   "repository": {
     "type": "git",

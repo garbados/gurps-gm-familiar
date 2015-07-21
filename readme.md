@@ -1,6 +1,7 @@
 # Familiar
 
 [![Build Status](https://travis-ci.org/garbados/gurps-gm-familiar.svg?branch=master)](https://travis-ci.org/garbados/gurps-gm-familiar)
+[![Coverage Status](https://coveralls.io/repos/garbados/gurps-gm-familiar/badge.svg?branch=master&service=github)](https://coveralls.io/github/garbados/gurps-gm-familiar?branch=master)
 
 **THIS PROJECT IS UNDER CONSTRUCTION. IT WILL NOT YET WORK AS DESCRIBED.**
 
