@@ -10,7 +10,16 @@
 	</div>
 </div>
 <div class="row" ng-show="info">
+	<div class="col-xs-12" ng-show="skill.defaults">
+		<p><strong>Defaults</strong></p>
+		<ul>
+			<li ng-repeat="(name, value) in skill.defaults">
+				{{ name }}{{value}}
+			</li>
+		</ul>
+	</div>
 	<div class="col-xs-12">
+		<p ng-show="skill.requires_specialty">Specialty Required</p>
 		<p>{{ skill.description }}</p>
 	</div>
 </div>
