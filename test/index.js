@@ -16,6 +16,7 @@ describe('characters', function () {
   });
 
   it('should have derivative stats', function () {
+    var self = this;
     var test_model = new this.Character();
 
     // model has base stats
@@ -26,13 +27,40 @@ describe('characters', function () {
     test_model.strength = 12;
     assert.equal(test_model.max_hp, test_model.strength);
 
+    // EVERY DERIVED AND SETTABLE STAT OMGGGGGG
+    ['hp', 'fp'].forEach(function (name) {
+      assert.notEqual(test_model[name], undefined);
+      test_model[name] = 1;
+      assert.equal(test_model['_' + name], 1);
+    });
+
     // things like skills have default values too
     assert.equal(test_model.skills('Acting'), 0);
+    test_model.skills('Acting', 1);
+    assert.equal(test_model.skills('Acting'), 1);
   });
 });
 
 describe('advantages', function () {
   test_model_and_controller('advantages');
+
+  before(function () {
+    this.Advantages = familiar.advantages;
+    this.Advantage = this.Advantages.model;
+  });
+
+  it('should have derivative stats', function () {
+    var test_model = new this.Advantage();
+
+    // model has base stats
+    assert.equal(test_model.types.length, 1);
+
+    // but you can modify them
+    // and the derived stats change
+    test_model.physical = true;
+    test_model.exotic = true;
+    assert.equal(test_model.types.length, 2);
+  });
 });
 
 describe('attributes', function () {
@@ -78,6 +106,8 @@ function test_model_and_controller (name) {
       var json = test_model.json;
       // EVEN TO STRING, OH SUGARSNAP!
       var json_string = JSON.stringify(json);
+      assert.equal(json_string, test_model.toJSON());
+      assert.equal(json_string._name, undefined);
       var json_parsed = JSON.parse(json_string);
       assert.deepEqual(json, json_parsed);
       // deserialize
@@ -105,9 +135,11 @@ function test_model_and_controller (name) {
       this.test_model = new this.controller.model();
       this.test_model.name = "D'argo";
     });
+
     after(function () {
       return this.controller.db.destroy();
     });
+
     it('should persist models to disk', function () {
       var self = this;
 
@@ -121,6 +153,23 @@ function test_model_and_controller (name) {
       });
     });
 
+    it('should persist a BUNCHA MODELS to disk', function () {
+      var self = this;
+      var models = [];
+      for (var i = 0; i < 100; i++) {
+        models.push(new this.controller.model({ name: String(i) }));
+      }
+
+      return this.controller.save(models)
+      .then(function () {
+        return self.controller.fetch();
+      })
+      .then(function (docs) {
+        // compare, but adjust for models inserted previously
+        assert.equal(docs.length - 1, models.length);
+      });
+    });
+
     it.skip('should handle queries', function () {
       var self = this;
 
@@ -128,8 +177,8 @@ function test_model_and_controller (name) {
         selector: {name: "D'argo"},
         fields: ['name']
       })
-      .then(function (model) {
-        console.log(arguments);
+      .then(function (models) {
+        assert.equal(models.length, 1);
       });
     });
   });
