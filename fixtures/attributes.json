@@ -1,0 +1,35 @@
+[
+	{
+		"name": "strength",
+		"description": "Strength measures physical power and bulk. It is crucial if you are a warrior in a primitive world, as high ST lets you dish out and absorb more damage in hand-to-hand combat. Any adventurer will find ST useful for lifting and throwing things, moving quickly with a load, etc.",
+		"cost": 10,
+		"limitations": {
+			"No Fine Manipulators": {
+				"modifier": -0.4,
+				"description": "If you have either level of the disadvantage No Fine Manipulators (p. 145), you may purchase ST more cheaply."
+			},
+			"Size": {
+				"modifier": -0.1,
+				"description": "Large creatures may purchase ST more cheaply; see p. 19 for details. -10% ¥ Size Modifier, to a maximum limitation of -80% (for Size Modifier +8 or higher)."
+			}
+		}
+	}, {
+		"name": "dexterity",
+		"description": "Dexterity measures a combination of agility, coordination, and fine motor ability. It controls your basic ability at most athletic, fighting, and vehicle-operation skills, and at craft skills that call for a delicate touch. DX also helps determine Basic Speed (a measure of reaction time, p. 17) and Basic Move (how fast you run, p. 17). Those with nonhuman physiologies may, with the GM’s permission, purchase their DX with the following limitation. (TODO)",
+		"cost": 20,
+		"limitations": {
+			"No Fine Manipulators": {
+				"modifier": -0.4,
+				"description": "If you have either level of the disadvantage No Fine Manipulators (p. 145), you may purchase DX more cheaply."
+			}
+		}
+	}, {
+		"name": "intelligence",
+		"description": "Intelligence broadly measures brainpower, including creativity, intuition, memory, perception, reason, sanity, and willpower. It rules your basic ability with all “mental” skills – sciences, social interaction, magic, etc. Any wizard, scientist, or gadgeteer needs a high IQ first of all. The secondary characteristics of Will (p. 16) and Perception (p. 16) are based on IQ.",
+		"cost": 20
+	}, {
+		"name": "health",
+		"description": "Health measures energy and vitality. It represents stamina, resistance (to poison, disease, radiation, etc.), and basic “grit.” A high HT is good for anyone – but it is vital for low-tech warriors. HT determines Fatigue Points (p. 16), and helps determine Basic Speed (p. 17) and Basic Move (p. 17).",
+		"cost": 10
+	}
+]

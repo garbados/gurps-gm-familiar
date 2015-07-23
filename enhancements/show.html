@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-info" ng-click="info = !info">?</button>
+		<span>{{ enhancement.name }}</span>
+		<ul class="list-inline pull-right well well-sm">
+			<li ng-show="enhancement.cost">
+				<span class="label label-danger">Cost: {{ enhancement.cost }}</span>
+			</li>
+			<li ng-show="enhancement.modifier">
+				<span class="label label-warning">Modifier: {{ enhancement.modifier }}</span>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="row" ng-show="info">
+	<div class="col-xs-12">
+		<p class="well well-sm">{{ enhancement.description }}</p>
+	</div>
+</div>

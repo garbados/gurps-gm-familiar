@@ -1,0 +1,7 @@
+<h1 ng-show="loading">Loading...</h1>
+
+<h1 ng-show="needs_seed">Getting started?</h1>
+<p ng-show="needs_seed">Your browser can download materials from the GURPS Basic Set to get you started.</p>
+<button ng-show="needs_seed" class="btn btn-success" ng-click="seed()">Download Materials!</button>
+
+<h1 ng-show="ready">How may I serve you?</h1>

@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Familiar</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container" ng-app="app">
+    <div class="page-header">
+      <a href="#/">
+        <h1>Familiar</h1>
+      </a>
+      <p>GURPS GM Assistant</p>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+            <a href="#/characters">Characters</a>
+          </li>
+          <li>
+            <a href="#/advantages">Advantages</a>
+          </li>
+          <li>
+            <a href="#/disadvantages">Disadvantages</a>
+          </li>
+          <li>
+            <a href="#/enhancements">Enhancements</a>
+          </li>
+          <li>
+            <a href="#/limitations">Limitations</a>
+          </li>
+          <li>
+            <a href="#/skills">Skills</a>
+          </li>
+          <li>
+            <a href="#/techniques">Techniques</a>
+          </li>
+          <li>
+            <a href="#/spells">Spells</a>
+          </li>
+          <hr />
+          <li>
+            <a href="#/settings">Settings</a>
+          </li>
+          <li>
+            <a href="#/locations">Locations</a>
+          </li>
+          <li>
+            <a href="#/campaigns">Campaigns</a>
+          </li>
+          <li>
+            <a href="#/calculator">Calculator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-10">
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

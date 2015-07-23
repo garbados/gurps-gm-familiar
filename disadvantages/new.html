@@ -1,0 +1,128 @@
+<h1>New Disadvantage</h1>
+<form class="form-horizontal">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-10">
+			<input ng-model="disadvantage.name" autofocus type="text" class="form-control"></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Description</label>
+		<div class="col-sm-10">
+			<textarea ng-model="disadvantage.description" class="form-control" rows="3"></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Cost</label>
+		<div class="col-sm-10">
+			<input ng-model="disadvantage.cost" type="number" class="form-control" min="0"></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Max Levels</label>
+		<div class="col-sm-10">
+			<input ng-model="disadvantage.max" type="number" class="form-control" min="0"></input>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<div class="checkbox">
+				<label class="checkbox-inline">
+					<input type="checkbox" ng-model="disadvantage.physical"> Physical
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" ng-model="disadvantage.mental"> Mental
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" ng-model="disadvantage.social"> Social
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" ng-model="disadvantage.exotic"> Exotic
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" ng-model="disadvantage.supernatural"> Supernatural
+				</label>
+			</div>
+		</div>
+	</div>
+	<fieldset disabled>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" ng-model="disadvantage.mundane"> Mundane
+					</label>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-info" ng-click="addEnhancement()">Add Enhancement</button>
+		</div>
+	</div>
+	<fieldset class="form-horizontal" ng-repeat="enhancement in disadvantage.enhancements">
+		<h2>New Enhancement <button ng-click="removeEnhancement($index)" class="btn btn-link">Remove</button></h2>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input ng-model="enhancement.name" type="text" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Description</label>
+			<div class="col-sm-10">
+				<textarea ng-model="enhancement.description" class="form-control" rows="3"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Cost</label>
+			<div class="col-sm-10">
+				<input ng-model="enhancement.cost" type="number" class="form-control" max="0"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Modifier</label>
+			<div class="col-sm-10">
+				<input ng-model="enhancement.modifier" type="number" class="form-control" min="-1" max="0" step="0.1"></input>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-info" ng-click="addLimitation()">Add Limitation</button>
+		</div>
+	</div>
+	<fieldset class="form-horizontal" ng-repeat="limitation in disadvantage.limitations">
+		<h2>New Limitation <button ng-click="removeLimitation($index)" class="btn btn-link">Remove</button></h2>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input ng-model="limitation.name" type="text" class="form-control"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Description</label>
+			<div class="col-sm-10">
+				<textarea ng-model="limitation.description" class="form-control" rows="3"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Cost</label>
+			<div class="col-sm-10">
+				<input ng-model="limitation.cost" type="number" class="form-control" max="0"></input>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Modifier</label>
+			<div class="col-sm-10">
+				<input ng-model="limitation.modifier" type="number" class="form-control" min="-1" max="0" step="0.1"></input>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="submit" class="btn btn-success"></input>
+		</div>
+	</div>
+</form>

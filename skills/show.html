@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-info" ng-click="info = !info">?</button>
+		<span>{{ skill.name }}</span>
+		<ul class="list-inline pull-right well well-sm">
+			<li>{{ skill.attribute }}</li>
+			<li>/</li>
+			<li>{{ skill.difficulty }}</li>
+		</ul>
+	</div>
+</div>
+<div class="row" ng-show="info">
+	<div class="col-xs-12" ng-show="skill.defaults">
+		<p><strong>Defaults</strong></p>
+		<ul>
+			<li ng-repeat="(name, value) in skill.defaults">
+				{{ name }}{{value}}
+			</li>
+		</ul>
+	</div>
+	<div class="col-xs-12">
+		<p ng-show="skill.requires_specialty">Specialty Required</p>
+		<p>{{ skill.description }}</p>
+	</div>
+</div>
